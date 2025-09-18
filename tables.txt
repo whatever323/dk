@@ -1,0 +1,35 @@
+-- Table: ETUDIANT
+CREATE TABLE ETUDIANT (
+    CodeEt INT PRIMARY KEY,
+    NomEt VARCHAR(100) NOT NULL,
+    DatnEt DATE NOT NULL
+);
+
+-- Table: MATIERE
+CREATE TABLE MATIERE (
+    CodeMat INT PRIMARY KEY,
+    NomMat VARCHAR(100) NOT NULL,
+    CoefMat INT NOT NULL
+);
+
+-- Table: NOTE
+CREATE TABLE NOTE (
+    CodeEt INT,
+    CodeEns INT,
+    Note DECIMAL(5,2) CHECK (Note >= 0 AND Note <= 20),
+    PRIMARY KEY (CodeEt, CodeEns),
+    FOREIGN KEY (CodeEt) REFERENCES ETUDIANT(CodeEt),
+    FOREIGN KEY (CodeEns) REFERENCES ENSEIGNANT(CodeEns)
+);
+
+
+-- Table: ENSEIGNANT
+CREATE TABLE ENSEIGNANT (
+    CodeEns INT PRIMARY KEY,
+    NomEns VARCHAR(100) NOT NULL,
+    GradeEns VARCHAR(20),
+    CodeMat INT NOT NULL,
+    FOREIGN KEY (CodeMat) REFERENCES MATIERE(CodeMat)
+);
+
+
