@@ -1,18 +1,22 @@
--- Table: ETUDIANT
 CREATE TABLE ETUDIANT (
     CodeEt INT PRIMARY KEY,
     NomEt VARCHAR(100) NOT NULL,
     DatnEt DATE NOT NULL
 );
 
--- Table: MATIERE
+
+
+
 CREATE TABLE MATIERE (
     CodeMat INT PRIMARY KEY,
     NomMat VARCHAR(100) NOT NULL,
     CoefMat INT NOT NULL
 );
 
--- Table: NOTE
+
+
+
+
 CREATE TABLE NOTE (
     CodeEt INT,
     CodeEns INT,
@@ -23,7 +27,10 @@ CREATE TABLE NOTE (
 );
 
 
--- Table: ENSEIGNANT
+
+
+
+
 CREATE TABLE ENSEIGNANT (
     CodeEns INT PRIMARY KEY,
     NomEns VARCHAR(100) NOT NULL,
